@@ -32,6 +32,7 @@ def getTreeDepth(myTree):
     for key in secondDict.keys():
         if type(secondDict[key]) == dict:
            thisDepth = 1 + getTreeDepth(secondDict[key])
+           break                   #如果执行了if提前跳出循环就不执行else，不加break else总是执行
     else:
         thisDepth = 1
     if thisDepth > maxDepth: maxDepth = thisDepth
